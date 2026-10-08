@@ -18,3 +18,11 @@ tokio = { version = "1.53.2", features = ["full"] }
 tower-http = { version = "0.7.1", features = ["trace"] }
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
+
+[dev-dependencies]
+http-body-util = "0.1.5"
+tower = { version = "0.5.3", features = ["util"] }
+
+# argon2 在未优化构建下非常慢（每次注册/登录约数秒），单独为它开启优化
+[profile.dev.package.argon2]
+opt-level = 3

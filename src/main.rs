@@ -4,6 +4,8 @@ mod db;
 mod error;
 mod models;
 mod routes;
+#[cfg(test)]
+mod tests;
 
 use std::sync::Arc;
 
